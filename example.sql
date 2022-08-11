@@ -167,6 +167,8 @@ WHERE source_file_name NOT IN (
 		FROM click_stream
 		)
 
+--Then we clear out the staging table:
+alter table stage_click_stream drop partition 1;
 
 --now that data's loading, and I've got all my indexes in place we can run our query to find
 --click fraud.
